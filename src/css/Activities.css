@@ -1,0 +1,11 @@
+.activities{
+    content:'';
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    background-size: 100%;
+    left:0;
+    top:0;
+    background: rgb(28,172,116);
+    background: linear-gradient(90deg, rgba(28,172,116,1) 0%, rgba(170,250,200,1) 35%, rgba(237,175,184,1) 100%);
+}

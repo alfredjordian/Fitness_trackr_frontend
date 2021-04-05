@@ -224,6 +224,7 @@ function Login({setToken, token, username, setUsername}) {
           
 
           setToken(regToken) 
+          localStorage.setItem("token", token);
           handleClose()
 
 
@@ -318,7 +319,8 @@ function Login({setToken, token, username, setUsername}) {
           const data = await submitRegister( username, password )
           
           const regToken = data.token
-          setToken(regToken) 
+          setToken(regToken)
+          localStorage.setItem("token", token);
           handleRegClose()
           console.log(token)
 

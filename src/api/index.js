@@ -21,6 +21,19 @@ export const submitLogin = async ( username, password ) => { //how are these obj
   }
 }
 
+export const getUserName = async (token) => {
+
+const response = await fetch('http://fitnesstrac-kr.herokuapp.com/api/users/me', {
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+})
+    const data = await response.json();    
+    return data;
+
+}
+
 
 export const submitRegister = async ( username, password ) => { //how are these objects, they are string values?
    try { 
@@ -79,7 +92,7 @@ export const fetchAllActivities = async () => {
 }
 
   export const fetchMyRoutines = async (username) => {
-
+    console.log("console test", username)
   try{
     const response = await fetch(`http://fitnesstrac-kr.herokuapp.com/api/users/albert/routines`, {
       headers: {

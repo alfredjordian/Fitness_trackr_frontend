@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     },
   });
 
-function Routines({setToken, token}) {
+function Routines({setToken, token, username, setUsername}) {
 
     const classes = useStyles()
 
@@ -52,15 +52,13 @@ function Routines({setToken, token}) {
         fetchData();
       }, [setRoutines]);
 
-      console.log(routines)
-
-      console.log()
+      
       // is it possible to not use nested mapping here for the routine.activities, 
       //but maybe render the activities component and attach it to routine?
     return (
         <div className="routines" style={{display: 'flex'}}>
             <NavBox setToken={setToken}/>
-            <Login/>
+            <Login token={token} setToken={setToken} username={username} setUsername={setUsername}/>
             <div style={{marginTop:'5%'}}>
                 {
                   routines.map((r, i) => <div 

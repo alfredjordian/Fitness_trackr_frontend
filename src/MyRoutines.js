@@ -62,6 +62,7 @@ function MyRoutines({setToken, token, password, setUsername }, username) {
       }, [setMyRoutines]);
 
     console.log(token)
+    if(!Object.keys(username).length) return <div>Loading</div> 
     return (
         <div className="myroutines" >
             
